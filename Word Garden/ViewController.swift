@@ -49,12 +49,12 @@ class ViewController: UIViewController {
         lettersGuessed += guessedLetterField.text!
         for letter in wordToGuess {
             if lettersGuessed.contains(letter){
-                revealedWord = revealedWord + "\(letter)"
+                revealedWord = revealedWord + " \(letter)" // extra blank for spacing
             }else{
                 revealedWord += " _"
             }
         }
-        revealedWord.removeFirst()
+        revealedWord.removeFirst() // remove extra blank
         userGuessLabel.text = revealedWord
         
     }
@@ -90,11 +90,11 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func doneKeyPressed(_ sender: UITextField) {
-        guessALetter()
-        updateUIAterGuess()
-        
-    }
+//    @IBAction func doneKeyPressed(_ sender: UITextField) {
+//        guessALetter()
+//        updateUIAterGuess()
+//
+//    }
     @IBAction func guessLetterButtonPressed(_ sender: UIButton) {
         guessALetter()
         updateUIAterGuess()
